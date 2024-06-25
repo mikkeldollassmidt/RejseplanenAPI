@@ -1,0 +1,62 @@
+
+* {
+    font-family: sans;
+}
+
+.trip-container {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    font-size: 9px;
+    margin-bottom: 10px;
+}
+
+.trip-header {
+    background: white;
+        border: 2px solid #bdbdbd42;
+    display: flex;
+    justify-content: space-between;
+    padding:10px;
+    padding-right: 15px;
+    border-radius: 8px;
+    color: #000d2a;
+}
+
+.trip-header-time {
+    margin: 0px;
+}
+.trip-header-text {
+    margin: 0px;
+}
+
+.trip-header-change-outer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:row;
+}
+
+.trip-header-hr {
+    outline: none;
+    border: none;
+    background: #bdbdbd42;
+    width: 2px;
+    height: 100%;
+    margin-right: 15px;
+    margin-left: 10px;
+}
+
+.trip-header-change {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.trip-header-change-count {
+    font-size: 25px;
+}
+
+.trip-header-change-title {
+    font-size: 14px;
+}
