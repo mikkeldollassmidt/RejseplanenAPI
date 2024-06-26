@@ -6,33 +6,16 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/font.css">
     <title>Rejseplanen</title>
-    <style>
-        body {
-            margin: 0px;
-            padding: 0px;
-            display: flex;
-            align-items: center;
-            width: 100%;
-            flex-direction: column;
-        }
-
-        h1 {
-            margin: 0px;
-        }
-        button {
-            width: 200px;
-        }
-    </style>
 </head>
 <body>
     <div class="form-group">
         <label for="origin">Origin:</label>
-        <input type="text" id="origin" name="origin" list="origin-suggestions" oninput="updateSuggestions('origin')">
+        <input type="text" id="origin" name="origin" list="origin-suggestions">
         <datalist id="origin-suggestions"></datalist>
     </div>
     <div class="form-group">
         <label for="destination">Destination:</label>
-        <input type="text" id="destination" name="destination" list="destination-suggestions" oninput="updateSuggestions('destination')">
+        <input type="text" id="destination" name="destination" list="destination-suggestions">
         <datalist id="destination-suggestions"></datalist>
     </div>
     <button>Find Trip</button>

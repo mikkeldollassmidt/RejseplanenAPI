@@ -1,4 +1,18 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
 
+h1 {
+    margin: 0px;
+}
+button {
+    width: 200px;
+}
 * {
     font-family: sans;
 }
@@ -9,6 +23,8 @@
     width: 500px;
     font-size: 9px;
     margin-bottom: 10px;
+    border-radius: 10px;
+    background: #eeeeee;
 }
 
 .trip-header {
@@ -20,6 +36,20 @@
     padding-right: 15px;
     border-radius: 8px;
     color: #000d2a;
+}
+
+.trip-header:hover {
+    cursor: pointer;
+    filter: brightness(99.5%);
+}
+
+.trip-header2 {
+    display: flex;
+    justify-content: space-between;
+    padding:10px;
+    padding-right: 15px;
+    color: #000d2a;
+    margin-top: 5px;
 }
 
 .trip-header-time {
@@ -59,4 +89,25 @@
 
 .trip-header-change-title {
     font-size: 14px;
+}
+
+.trip-details {
+    width: 100%;
+}
+
+.trips-hr {
+    height: 2px;
+    border: none;
+    width: 95%;
+    border-bottom: 2px solid #dcdcdc;
+
+}
+
+.trip-header-mode {
+    background: #ecbd01;
+    width: fit-content;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 4px;
 }

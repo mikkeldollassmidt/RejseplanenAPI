@@ -137,29 +137,65 @@ function displayResults(tripList) {
     }
 
     tripList.Trip.forEach(trip => {
+        if (!Array.isArray(trip.Leg)) {
+            console.error('Invalid trip leg data:', trip.Leg);
+            return;
+        }
         const numberOfChanges = trip.Leg.length - 1;
         const tripElement = document.createElement('div');
-        tripElement.className = 'trip';
+        tripElement.className = 'trip-summary';
         tripElement.innerHTML = `
-            ${trip.Leg.map(leg => `
                 <div class="trip-container">
-                    <div class="trip-header">
-                        <div class="trip-header-time">
-                            <h1 class="trip-header-text">${leg.Origin.time} ${leg.Origin.name} <b>></b> ${leg.Destination.time} ${leg.Destination.name}</h1>
-                        </div>
+            <div class="trip-header" onclick="toggleDetails(this)">
+                <div class="trip-header-time">
+                    <h1 class="trip-header-text">${trip.Leg[0].Origin.time} ${trip.Leg[0].Origin.name} <b>></b> ${trip.Leg[trip.Leg.length - 1].Destination.time} ${trip.Leg[trip.Leg.length - 1].Destination.name}</h1>
+                </div>
+                <div class="trip-header-change-outer-container">
+                    <hr class="trip-header-hr">
+                    <div class="trip-header-change">
+                        <h1 class="trip-header-change-count">${numberOfChanges}</h1>
+                        <h1 class="trip-header-change-title">Skift</h1>
                     </div>
                 </div>
-            `).join('')}
-            <div class="trip-header-change-outer-container">
-                <hr class="trip-header-hr">
-                <div class="trip-header-change">
-                    <h1 class="trip-header-change-count">${numberOfChanges}</h1>
-                    <h1 class="trip-header-change-title">Skift</h1>
-                </div>
             </div>
+            <div class="trip-details" style="display: none;">
+                ${trip.Leg.map((leg, index) => `
+                    ${index > 0 ? '<hr class="trips-hr">' : ''}
+                    <div class="trip-container2">
+                        <div class="trip-header2">
+                            <div class="trip-header-time">
+                                <h1 class="trip-header-text">${leg.Origin.time} ${leg.Origin.name} <b>></b> ${leg.Destination.time} ${leg.Destination.name}</h1>
+                                <h2 class="trip-header-mode">${getModeOfTransport(leg)}</h2>
+                            </div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
         `;
         resultsContainer.appendChild(tripElement);
     });
+}
+
+function getModeOfTransport(leg) {
+    if (leg.type === 'WALK') {
+        return 'Til fods';
+    } else if (leg.type === 'BUS') {
+        return 'Bus';
+    } else if (leg.type === 'TRAIN') {
+        return 'Tog';
+    } else {
+        return leg.name || 'Ukendt transport';
+    }
+}
+
+function toggleDetails(headerElement) {
+    const detailsElement = headerElement.nextElementSibling;
+    if (detailsElement.style.display === 'none') {
+        detailsElement.style.display = 'block';
+    } else {
+        detailsElement.style.display = 'none';
+    }
 }
 
 function handleAutoComplete(inputType) {
