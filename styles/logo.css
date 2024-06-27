@@ -1,0 +1,95 @@
+@keyframes circle {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(900%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes right {
+    0% {
+        width: 100%;
+    }
+    50% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes left {
+    0% {
+        width: 0%;
+    }
+    50% {
+        width: 100%;
+    }
+    100% {
+        width: 0%;
+    }
+}
+
+
+
+.rejser-logo {
+    width: 250px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+}
+
+.rejser-logo-horizontal-left {
+    background: #e8b808;
+    height: 12px;
+    border: none;
+    outline: none;
+    width: 50%;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    animation: left 7s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+}
+
+.rejser-logo-horizontal-right {
+    background: #002844;
+    height: 12px;
+    border: none;
+    outline: none;
+    width: 50%;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    animation: right 7s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+}
+
+.rejser-logo-circle {
+    background: #ec1c23;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    border: 6px solid white;
+    outline: 6px solid #002844;
+    position: absolute;
+    top: 32%;
+    left: 0;
+    animation: circle 7s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+}
+
+.rejser-logo-text-container {
+    width: 250px;
+    font-size: 9px;
+}
+
+.rejser-logo-text {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: -5px;
+    color: #002844;
+}

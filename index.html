@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/logo.css">
+    <link rel="stylesheet" href="styles/font.css">
+    <title>Rejseplanen</title>
+</head>
+
+<body>
+
+
+    <div class="rejser-image-container">
+
+        <div class="rejser-logo">
+            <hr class="rejser-logo-horizontal-left">
+            <div class="rejser-logo-circle"></div>
+            <hr class="rejser-logo-horizontal-right">
+        </div>
+
+        <div class="rejser-logo-text-container">
+            <div class="rejser-logo-text">
+                <h1>R</h1>
+                <h1>E</h1>
+                <h1>J</h1>
+                <h1>S</h1>
+                <h1>E</h1>
+                <h1>P</h1>
+                <h1>L</h1>
+                <h1>A</h1>
+                <h1>N</h1>
+                <h1>E</h1>
+                <h1>N</h1>
+            </div>        
+        </div>
+
+        <hr class="rejser-hr">
+    </div>
+
+    <div class="user-input-container">
+        <div class="a-b-container">
+            <h1 class="a-b-a">A</h1>
+            <hr class="a-b-hr">
+            <h1 class="a-b-b">B</h1>
+        </div>
+        <div class="input-outer-container">
+            <div class="input-container">
+                <h1 class="input-title">Start</h1>
+                <div class="form-group">
+                    <input type="text" id="origin" name="origin" list="origin-suggestions" placeholder="Indtast start">
+                    <datalist id="origin-suggestions"></datalist>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <h1 class="input-title">Destination</h1>
+                <div class="form-group">
+                    <input type="text" id="destination" name="destination" list="destination-suggestions"
+                        placeholder="Indtast destination">
+                    <datalist id="destination-suggestions"></datalist>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button>Søg ></button>
+
+
+
+    <div class="results" id="results">
+        <div id="loading"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
