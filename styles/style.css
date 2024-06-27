@@ -290,7 +290,7 @@ input::placeholder {
     margin: 0px;
     padding: 0px;
     border-radius: 50%;
-    background: #ff414b;
+    background: #5d5d5d;
     width: 20px;
     height: 20px;
     display:flex;
@@ -298,6 +298,15 @@ input::placeholder {
     align-items: center;
     color: white;
 }
+
+.a-b-a.active {
+    background: #ff414b;
+}
+
+.a-b-b.active {
+    background: #ff414b;
+}
+
 
 button {
     outline: none;

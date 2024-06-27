@@ -276,4 +276,45 @@ function initialize() {
     document.querySelector('button').addEventListener('click', findTrip);
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    const originInput = document.getElementById('origin');
+    const destinationInput = document.getElementById('destination');
+    const aElement = document.querySelector('.a-b-a');
+    const bElement = document.querySelector('.a-b-b');
+
+    originInput.addEventListener('focus', function() {
+        aElement.classList.add('active');
+        bElement.classList.remove('active'); // Deactivate B
+    });
+
+    originInput.addEventListener('blur', function() {
+        if (!originInput.value) {
+            aElement.classList.remove('active');
+        }
+    });
+
+    originInput.addEventListener('input', function() {
+        aElement.classList.add('active');
+        bElement.classList.remove('active'); // Deactivate B
+    });
+
+    destinationInput.addEventListener('focus', function() {
+        bElement.classList.add('active');
+        aElement.classList.remove('active'); // Deactivate A
+    });
+
+    destinationInput.addEventListener('blur', function() {
+        if (!destinationInput.value) {
+            bElement.classList.remove('active');
+        }
+    });
+
+    destinationInput.addEventListener('input', function() {
+        bElement.classList.add('active');
+        aElement.classList.remove('active'); // Deactivate A
+    });
+});
+
+
 window.onload = initialize;
+
